@@ -1,0 +1,77 @@
+{
+	"name": "traducteur",
+	"displayName": "Traducteur",
+	"description": "Extension permetant de traduire du texte simplement depuis vscode",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.66.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:traducteur.helloWorld",
+		"onCommand:traducteur.traduction",
+		"onCommand:traducteur.traductionSettings"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "traducteur.helloWorld",
+				"title": "Hello World"
+			},
+			{
+				"command": "traducteur.traductionSettings",
+				"title": "Traduction Settings"
+			}
+		],
+		"configuration": {
+			"title": "Translator Settings",
+			"properties": {
+				"traducteur.language": {
+					"type": "string",
+					"default": "fr",
+					"enum": [
+						"en",
+						"fr"
+					],
+					"description": "Langue de traduction du text"
+				},
+				"traducteur.sourceLanguage": {
+					"type": "string",
+					"default": "en",
+					"enum": [
+						"en",
+						"fr"
+					],
+					"description": "Langue source du text"
+				},
+				"traducteur.apiToken": {
+					"type": "string",
+					"default": "",
+					"description": "Token de l'API"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.0",
+		"@types/node": "14.x",
+		"@types/vscode": "^1.66.0",
+		"@vscode/test-electron": "^2.1.3",
+		"eslint": "^8.11.0",
+		"glob": "^7.2.0",
+		"mocha": "^9.2.2",
+		"typescript": "^4.5.5"
+	},
+	"dependencies": {
+		"nlpcloud": "^1.0.21"
+	}
+}
