@@ -1,6 +1,6 @@
 # VS Translator README
 
-Extenssion vscode permétant de traduire une text directement dans l'éditeur
+Extension vscode permétant de traduire une text directement dans l'éditeur
 
 ## Extension Settings
 
